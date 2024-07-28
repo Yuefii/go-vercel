@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/nusantara/v2": {
+      "runtime": "go1.16"
+    }
+  }
+}
