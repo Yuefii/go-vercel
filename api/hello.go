@@ -7,10 +7,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func HelloWorld(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World from Go!")
-}
-
 func HelloFromID(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["id"]
@@ -19,7 +15,6 @@ func HelloFromID(w http.ResponseWriter, r *http.Request) {
 
 func SetupRoutes() *mux.Router {
 	r := mux.NewRouter()
-	r.HandleFunc("/", HelloWorld).Methods("GET")
 	r.HandleFunc("/{id}", HelloFromID).Methods("GET")
 	return r
 }
