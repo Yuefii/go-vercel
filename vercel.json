@@ -2,8 +2,8 @@
     "trailingSlash": false,
     "rewrites": [
         {
-            "source": "/v1/api/with-gin/:path*",
-            "destination": "/api/with-gin.go"
+            "source": "/v1/api/hello/:path*",
+            "destination": "/api/hello.go"
         },
         {
             "source": "/v1/api/:path*",
