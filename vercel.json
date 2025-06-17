@@ -1,0 +1,24 @@
+{
+    "trailingSlash": false,
+    "rewrites": [
+        {
+            "source": "/v1/api/with-gin/:path*",
+            "destination": "/api/with-gin.go"
+        },
+        {
+            "source": "/v1/api/:path*",
+            "destination": "/api/:path*"
+        }
+    ],
+    "redirects": [
+        {
+            "source": "/api/:path*",
+            "destination": "/v1/api/:path*"
+        }
+    ],
+    "build": {
+        "env": {
+            "GO_BUILD_FLAGS": "-ldflags '-s -w'"
+        }
+    }
+}
