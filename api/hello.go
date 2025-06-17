@@ -1,20 +1,25 @@
-package handler
+package api
 
 import (
-	"fmt"
+	pkg "go-vercel/api/_pkg"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
 )
 
-func HelloFromID(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	id := vars["id"]
-	fmt.Fprintf(w, "Hello with ID: %s", id)
+var (
+	app *gin.Engine
+)
+
+func init() {
+	app = gin.New()
+
+	v1 := app.Group("/v1/api")
+	{
+		v1.GET("/with-gin/:name", pkg.HelloNameHandler)
+	}
 }
 
-func SetupRoutes() *mux.Router {
-	r := mux.NewRouter()
-	r.HandleFunc("/{id}", HelloFromID).Methods("GET")
-	return r
+func Handler(w http.ResponseWriter, r *http.Request) {
+	app.ServeHTTP(w, r)
 }
