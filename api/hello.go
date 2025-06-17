@@ -1,7 +1,7 @@
 package api
 
 import (
-	"fmt"
+	pkg "go-vercel/api/_pkg"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -13,19 +13,7 @@ var (
 
 func init() {
 	app = gin.New()
-	app.GET("/v1/api/hello/:name", func(ctx *gin.Context) {
-
-		name := ctx.Param("name")
-		if name == "" {
-			ctx.JSON(400, gin.H{
-				"message": "name not found",
-			})
-		} else {
-			ctx.JSON(200, gin.H{
-				"data": fmt.Sprintf("Hello %s!", name),
-			})
-		}
-	})
+	app.GET("/v1/api/hello/:name", pkg.HelloNameHandler)
 
 	app.GET("/v1/api/hello", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
