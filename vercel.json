@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/api/users/:path*",
-      "destination": "/api/main.go"
+      "destination": "/api/users.go"
     },
     {
       "source": "/api/:path*",
