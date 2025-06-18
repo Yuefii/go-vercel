@@ -14,10 +14,7 @@ var (
 func init() {
 	app = gin.New()
 
-	api := app.Group("/api")
-	{
-		api.GET("/users", h.GetUsers)
-	}
+	app.GET("/v1/api/users", h.GetUsers)
 }
 
 // entrypoint
