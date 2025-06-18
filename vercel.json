@@ -2,16 +2,8 @@
     "trailingSlash": false,
     "rewrites": [
         {
-            "source": "/api/users/:path*",
-            "destination": "/api/users.go"
-        },
-        {
-            "source": "/api/categories/:path*",
-            "destination": "/api/categories.go"
-        },
-        {
             "source": "/api/:path*",
-            "destination": "/api/:path*"
+            "destination": "/api/index.go"
         }
     ],
     "build": {

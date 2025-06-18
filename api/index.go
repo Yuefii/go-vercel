@@ -1,4 +1,4 @@
-package api
+package main
 
 import (
 	h "go-vercel/api/_pkg/handlers"
@@ -7,18 +7,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var (
-	app *gin.Engine
-)
-
-func init() {
-	app = gin.New()
+func Handler(w http.ResponseWriter, r *http.Request) {
+	app := gin.New()
 
 	app.GET("/api/users", h.GetUsers)
 	app.GET("/api/users/:id", h.GetUserByID)
-}
+	app.GET("/api/categories", h.GetCategories)
 
-// entrypoint
-func Handler(w http.ResponseWriter, r *http.Request) {
 	app.ServeHTTP(w, r)
 }
