@@ -8,7 +8,9 @@ import (
 )
 
 func GetUsers(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, models.Users)
+	c.IndentedJSON(http.StatusOK, gin.H{
+		"data": models.Users,
+	})
 }
 
 func GetUserByID(c *gin.Context) {
@@ -16,7 +18,9 @@ func GetUserByID(c *gin.Context) {
 
 	for _, user := range models.Users {
 		if user.ID == id {
-			c.IndentedJSON(http.StatusOK, user)
+			c.IndentedJSON(http.StatusOK, gin.H{
+				"data": user,
+			})
 			return
 		}
 	}
