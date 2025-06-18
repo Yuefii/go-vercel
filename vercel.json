@@ -1,18 +1,22 @@
 {
-    "trailingSlash": false,
-    "rewrites": [
-        {
-            "source": "/api/users/:path*",
-            "destination": "/api/users.go"
-        },
-        {
-            "source": "/api/:path*",
-            "destination": "/api/:path*"
-        }
-    ],
-    "build": {
-        "env": {
-            "GO_BUILD_FLAGS": "-ldflags '-s -w'"
-        }
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/api/users/:path*",
+      "destination": "/api/users.go"
+    },
+    {
+      "source": "/api/categories",
+      "destination": "/api/categories.go"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     }
+  ],
+  "build": {
+    "env": {
+      "GO_BUILD_FLAGS": "-ldflags '-s -w'"
+    }
+  }
 }
