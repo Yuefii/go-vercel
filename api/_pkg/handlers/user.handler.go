@@ -1,20 +1,20 @@
 package handlers
 
 import (
-	m "go-vercel/api/_pkg/models"
+	"go-vercel/api/_pkg/models"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
 func GetUsers(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, m.Users)
+	c.IndentedJSON(http.StatusOK, models.Users)
 }
 
 func GetUserByID(c *gin.Context) {
 	id := c.Param("id")
 
-	for _, user := range m.Users {
+	for _, user := range models.Users {
 		if user.ID == id {
 			c.IndentedJSON(http.StatusOK, user)
 			return

@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"go-vercel/pkg/models"
+	"go-vercel/api/_pkg/models"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
