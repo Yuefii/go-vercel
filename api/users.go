@@ -2,7 +2,6 @@ package api
 
 import (
 	h "go-vercel/api/_pkg/handlers"
-	"go-vercel/pkg/handlers"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -17,7 +16,6 @@ func init() {
 
 	app.GET("/api/users", h.GetUsers)
 	app.GET("/api/users/:id", h.GetUserByID)
-	app.GET("/api/categories", handlers.GetCategories)
 }
 
 // entrypoint
