@@ -15,6 +15,7 @@ func init() {
 	app = gin.New()
 
 	app.GET("/api/users", h.GetUsers)
+	app.GET("/api/users/:id", h.GetUserByID)
 }
 
 // entrypoint
