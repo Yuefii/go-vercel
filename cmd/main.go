@@ -2,6 +2,7 @@ package main
 
 import (
 	h "go-vercel/api/_pkg/handlers"
+	"go-vercel/pkg/handlers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,6 +14,8 @@ func main() {
 	api := app.Group("/api")
 	{
 		api.GET("/users", h.GetUsers)
+		api.GET("/users/:id", h.GetUserByID)
+		api.GET("/categories", handlers.GetCategories)
 	}
 
 	app.Run(":8080")
