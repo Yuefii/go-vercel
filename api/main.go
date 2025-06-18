@@ -1,7 +1,7 @@
 package api
 
 import (
-	pkg "go-vercel/api/_pkg"
+	h "go-vercel/api/_pkg/handlers"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -13,15 +13,11 @@ var (
 
 func init() {
 	app = gin.New()
-	app.GET("/v1/api/hello/:name", pkg.HelloNameHandler)
 
-	app.GET("/v1/api/hello", func(ctx *gin.Context) {
-		ctx.JSON(200, gin.H{
-			"data": gin.H{
-				"id": ctx.Query("id"),
-			},
-		})
-	})
+	api := app.Group("/api")
+	{
+		api.GET("/users", h.GetUsers)
+	}
 }
 
 // entrypoint

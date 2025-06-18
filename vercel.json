@@ -2,18 +2,18 @@
     "trailingSlash": false,
     "rewrites": [
         {
-            "source": "/v1/api/hello/:path*",
-            "destination": "/api/hello.go"
+            "source": "/api/:path*",
+            "destination": "/api/main.go"
         },
         {
-            "source": "/v1/api/:path*",
+            "source": "/api/:path*",
             "destination": "/api/:path*"
         }
     ],
     "redirects": [
         {
             "source": "/api/:path*",
-            "destination": "/v1/api/:path*"
+            "destination": "/api/:path*"
         }
     ],
     "build": {
