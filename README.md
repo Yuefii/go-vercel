@@ -1,14 +1,11 @@
-<div align="center">
-
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Gin](https://img.shields.io/badge/Gin-00BFFF?style=flat-square&logo=gin&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-
-</div>
-
 ## Deploying go on vercel
 
 Repositori ini dirancang sebagai starter pack untuk kamu yang ingin mempelajari cara mendeploy aplikasi Go di Vercel, khususnya bagi yang sedang belajar membuat REST API dengan Go menggunakan Gin. Cocok banget buat kamu yang ingin mencoba hosting secara gratis sebagai bagian dari proses belajar.
+
+demo:
+
+- https://go-starter.vercel.app/api/categories
+- https://go-starter.vercel.app/api/users
 
 ## Struktur folder
 
@@ -50,7 +47,7 @@ Repositori ini dirancang sebagai starter pack untuk kamu yang ingin mempelajari 
 - **`vercel.json`**  
   Konfigurasi deployment untuk Vercel. Mengatur runtime, routes, dan pengaturan deployment lainnya.
 
-contoh konfigurasi `vercel.json` pada project ini:
+Contoh konfigurasi `vercel.json` pada project ini:
 
 ```json
 {
@@ -78,7 +75,7 @@ git clone https://github.com/yuefii/go-vercel.git
 cd go-vercel
 ```
 
-2. Install Dependencies
+2. Install dependencies
 
 ```bash
 go mod tidy
@@ -92,4 +89,4 @@ go run cmd/main.go
 
 **Note:** Pastikan file `main.go` konfigurasi routenya sama dengan `index.go` agar tidak terjadi error saat melakukan deploy.
 
-thanks you semoga bermanfaat.
+Terima kasih semoga bermanfaat.
